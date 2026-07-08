@@ -1,0 +1,84 @@
+/* ==========================================================================
+   SISTEMA DE DISEÑO GLOBAL - GOOGRAM PREMIUM
+   ========================================================================== */
+
+   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+   :root {
+    /* MODO CLARO (Vaporwave Light Glass) */
+    --bg-main: transparent; 
+    --bg-surface: rgba(255, 255, 255, 0.6); /* Cristal blanco translúcido */
+    --text-primary: #111827; /* Texto oscuro */
+    --text-secondary: #4b5563; /* Gris oscuro */
+    
+    --liquid-bg-color: #f8fafc; /* Fondo clarito para el líquido */
+    
+    --accent-color: #00f2fe; /* Cian eléctrico */
+    --accent-hover: #00c2cb;
+    
+    --danger-color: #ff007f; /* Magenta Vaporwave */
+    --danger-hover: #d10068;
+    
+    --border-color: rgba(255, 255, 255, 0.5); /* Borde blanco */
+    
+    --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,0.15);
+    
+    --glass-blur: blur(20px);
+   }
+
+   /* MODO OSCURO (Vaporwave Dark Glass) */
+   body.dark-theme {
+    --bg-surface: rgba(10, 10, 20, 0.4); /* Cristal ultra-oscuro translúcido */
+    --text-primary: #ffffff; /* Texto blanco brillante */
+    --text-secondary: #9ca3af; /* Gris claro */
+    --border-color: rgba(255, 255, 255, 0.1); /* Borde de cristal oscuro */
+    --liquid-bg-color: #07071a; /* Fondo índigo profundo */
+    
+    --shadow-sm: 0 4px 15px rgba(0,0,0,0.3);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.4);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+   }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em; /* Toque premium en la tipografía */
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+/* ==========================================================================
+   FILTROS FOTOGRÁFICOS
+   ========================================================================== */
+.filter-normal { filter: none; }
+.filter-grayscale { filter: grayscale(100%); }
+.filter-sepia { filter: sepia(100%); }
+.filter-vintage { filter: sepia(50%) contrast(150%) saturate(150%) brightness(90%); }
+.filter-high-contrast { filter: contrast(150%) saturate(150%); }
+.filter-cool { filter: hue-rotate(180deg) saturate(120%); }

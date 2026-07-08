@@ -1,0 +1,224 @@
+/* ==========================================================================
+   ESTILOS PREMIUM PARA MODALES (UPLOAD, EDIT PROFILE, USER LIST)
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: var(--liquid-bg-color);
+    padding: 30px;
+    border-radius: 24px; /* Más redondo tipo iOS */
+    width: 90%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-md);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid var(--border-color);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px) scale(0.95); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.modal-title, .modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    width: 100%;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+}
+
+.close-btn:hover {
+    background-color: var(--bg-main);
+    color: var(--danger-color);
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Label estilo Dropzone */
+.upload-file-label {
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0,0,0,0.02);
+    transition: all 0.2s ease;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.upload-file-label:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(0, 149, 246, 0.05);
+    color: var(--accent-color);
+}
+
+.upload-file-icon {
+    font-size: 30px;
+}
+
+/* Campos de texto */
+.upload-input, .upload-textarea {
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.upload-input:focus, .upload-textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 149, 246, 0.1);
+}
+
+.upload-textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Botones */
+.btn-submit {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+}
+
+.btn-submit:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.btn-submit:disabled {
+    background-color: var(--border-color);
+    color: var(--text-secondary);
+    cursor: not-allowed;
+}
+
+.btn-cancel {
+    background: transparent;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    font-weight: 700;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: var(--hover-color);
+}
+
+/* User List Item (Seguidores) */
+.user-list-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.user-list-item:hover {
+    background-color: var(--bg-main);
+    border-color: var(--border-color);
+    transform: translateX(5px);
+}
+
+.user-list-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.user-list-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list-fullname {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.user-list-username {
+    font-size: 12px;
+    color: var(--text-secondary);
+}

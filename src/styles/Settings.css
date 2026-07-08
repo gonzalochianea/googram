@@ -1,0 +1,186 @@
+/* ==========================================================================
+   ESTILOS DE CONFIGURACIÓN (SETTINGS)
+   ========================================================================== */
+
+.settings-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    min-height: 600px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+/* --- MENÚ LATERAL INTERNO --- */
+.settings-sidebar {
+    width: 250px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.settings-tab {
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.settings-tab:hover {
+    background-color: var(--hover-color);
+    color: var(--text-primary);
+}
+
+.settings-tab.active {
+    border-left-color: var(--text-primary);
+    color: var(--text-primary);
+    font-weight: 700;
+    background-color: var(--hover-color);
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.settings-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.settings-section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.settings-group {
+    margin-bottom: 40px;
+}
+
+.settings-group h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.settings-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+/* --- ELEMENTOS ESPECÍFICOS --- */
+.color-picker-container {
+    display: flex;
+    gap: 15px;
+}
+
+.color-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+}
+
+.color-circle.active {
+    border: 2px solid var(--text-primary);
+    box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 4px var(--text-primary);
+}
+
+.settings-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.settings-input:focus {
+    border-color: var(--accent-color);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-danger:hover {
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .settings-container {
+        flex-direction: column;
+    }
+    
+    .settings-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px 0;
+    }
+    
+    .settings-tab {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+    }
+    
+    .settings-tab.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--text-primary);
+    }
+    
+    .settings-content {
+        padding: 20px;
+    }
+}

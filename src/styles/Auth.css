@@ -1,0 +1,99 @@
+/* Estilos base para la página de Login y Register (Estilo moderno / Instagram) */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: transparent; /* Permite ver el fondo animado */
+  font-family: var(--font-main);
+}
+
+.auth-form {
+  background-color: var(--bg-surface);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-logo {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  margin-bottom: -10px;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.input-group input {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.auth-btn {
+  background-color: var(--danger-color);
+  color: #f8fafc;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.auth-btn:hover {
+  background-color: var(--danger-hover);
+  transform: translateY(-2px);
+}
+
+.error-msg {
+  color: var(--danger-color);
+  font-size: 0.85rem;
+  text-align: center;
+  background: rgba(255, 0, 127, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--danger-color);
+  margin: 0;
+}

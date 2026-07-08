@@ -1,0 +1,173 @@
+/* ==========================================================================
+   LANDING PAGE STYLES
+   ========================================================================== */
+
+   .landing-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: transparent; /* Deja ver el LiquidBackground de fondo */
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* CONTENIDO PRINCIPAL */
+.landing-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.landing-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.landing-logo {
+    font-size: 32px;
+    font-weight: 900;
+    font-family: 'Poppins', 'Outfit', sans-serif;
+    /* Efecto Gradiente en el Texto */
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #f093fb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+.landing-nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-glass {
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-login {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+    backdrop-filter: blur(10px);
+}
+
+.btn-login:hover {
+    background: rgba(128, 128, 128, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-register {
+    background: var(--text-primary);
+    color: var(--liquid-bg-color);
+    border: 1px solid var(--text-primary);
+}
+
+.btn-register:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION */
+.landing-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    color: #00f2fe;
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    max-width: 900px;
+}
+
+.gradient-text-1 {
+    color: #f8fafc; /* Blanco mate */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para que se note en el modo claro */
+}
+
+.gradient-text-2 {
+    background: linear-gradient(to right, #ff007f, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--text-secondary); /* Gris mate adaptable */
+    font-family: 'Nunito', 'Quicksand', 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif; /* Tipografía divertida */
+    font-weight: 500;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero-cta {
+    font-size: 18px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #a855f7, #ff007f, #00f2fe);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+    animation: gradientShift 5s ease infinite;
+    text-decoration: none;
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.5);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 50px;
+    }
+    .landing-navbar {
+        padding: 20px;
+    }
+}

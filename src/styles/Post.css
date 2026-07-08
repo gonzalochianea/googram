@@ -1,0 +1,241 @@
+/* ==========================================================================
+   ESTILOS DE LA TARJETA POST (PREMIUM)
+   ========================================================================== */
+
+   .post-card {
+    background-color: var(--bg-surface);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 20px; /* Más redondeado y suave */
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 470px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm); /* Sombra ultra sutil */
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  /* Cuando el post se abre en un modal (Perfil / Explorar) */
+  .modal-post-container .post-card {
+    background-color: var(--liquid-bg-color); /* Blanco mate en claro, oscuro mate en oscuro */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  
+  .post-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .post-username {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+  
+  .post-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background-color: #fafafa;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    color: #333;
+    transition: all 0.2s ease;
+  }
+  
+  .carousel-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .carousel-btn.left { left: 15px; }
+  .carousel-btn.right { right: 15px; }
+  
+  .post-footer {
+    padding: 16px;
+  }
+  
+  .post-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .action-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s;
+  }
+  
+  .action-btn:hover {
+    color: var(--text-secondary);
+  }
+  
+  .action-btn:active {
+    transform: scale(0.85); /* Efecto de latido */
+  }
+  
+  .likes-count {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .post-caption {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  
+  .bold-name {
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  
+  .post-caption-area {
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+  }
+  
+  .comments-list {
+    max-height: 150px;
+    overflow-y: auto;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+  
+  .comment-item { 
+    margin-bottom: 12px; 
+    line-height: 1.6;
+  }
+  
+  .comment-form {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    padding-top: 14px;
+    margin-top: 14px;
+  }
+  
+  .comment-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+  }
+  
+  .comment-submit {
+    background: var(--danger-color);
+    border: none;
+    color: #f8fafc;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .comment-submit:hover:not(:disabled) {
+    background: var(--danger-hover);
+    transform: translateY(-2px);
+  }
+  
+  .comment-submit:disabled {
+    opacity: 0.5;
+    cursor: default;
+    transform: none;
+  }
+  
+  /* --- VISOR A PANTALLA COMPLETA --- */
+  .cursor-zoom {
+    cursor: zoom-in;
+  }
+  
+  .fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+  }
+  
+  .fullscreen-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 100000;
+    transition: transform 0.2s;
+  }
+  
+  .fullscreen-close:hover {
+    transform: scale(1.1);
+  }
+  
+  .fullscreen-image {
+    max-width: 800px;
+    width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    cursor: default;
+  }
