@@ -148,7 +148,7 @@ function Settings() {
   };
 
   return (
-    <div className="fade-in" style={{ paddingBottom: "50px" }}>
+    <div className="fade-in" style={{ paddingBottom: "50px", padding: "0 10px" }}>
       <h1 style={{ marginBottom: "20px" }}>Configuración</h1>
       
       <div className="settings-container">
@@ -325,6 +325,10 @@ function Settings() {
         </div>
       )}
 
+      {/* Copyright Footer */}
+      <div style={{ textAlign: "center", marginTop: "40px", color: "var(--text-secondary)", fontSize: "12px", opacity: 0.7 }}>
+        &copy; {new Date().getFullYear()} Googram.<br/>Todos los derechos reservados.
+      </div>
     </div>
   );
 }

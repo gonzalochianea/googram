@@ -187,7 +187,7 @@ function Sidebar({ onOpenUploadModal }) {
       </nav>
       
       {/* Copyright Footer */}
-      <div className="sidebar-footer" style={{ 
+      <div className="sidebar-footer hide-on-mobile" style={{ 
         marginTop: "auto", 
         paddingTop: "30px",
         paddingBottom: "10px", 

@@ -165,7 +165,7 @@
         border-right: none;
         border-bottom: 1px solid var(--border-color);
         flex-direction: row;
-        overflow-x: auto;
+        justify-content: space-between;
         padding: 10px 0;
     }
     
@@ -173,6 +173,11 @@
         border-left: none;
         border-bottom: 2px solid transparent;
         white-space: nowrap;
+        flex: 1;
+        justify-content: center;
+        padding: 10px 5px;
+        font-size: 13px;
+        gap: 5px;
     }
     
     .settings-tab.active {
@@ -181,6 +186,6 @@
     }
     
     .settings-content {
-        padding: 20px;
+        padding: 20px 0;
     }
 }
