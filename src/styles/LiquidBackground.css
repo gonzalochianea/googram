@@ -78,3 +78,14 @@
     50% { transform: translateY(30px) scaleY(1.1) rotate(2deg); }
     100% { transform: translateY(-30px) scaleY(0.9) rotate(-2deg); }
 }
+
+/* AJUSTES MÓVILES PARA EL FONDO LÍQUIDO */
+@media (max-width: 768px) {
+    .bg-orb {
+        opacity: 0.3; /* Menos invasivo en celular */
+    }
+    
+    .neon-path {
+        opacity: 0.3; /* Menos invasivo en celular */
+    }
+}

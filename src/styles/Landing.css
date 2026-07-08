@@ -165,9 +165,19 @@
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 50px;
+        font-size: 45px;
+        margin-top: 40px; /* Bajar un poco para no chocar con navbar */
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra fuerte para legibilidad */
+    }
+    .hero-subtitle {
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para legibilidad */
+        font-size: 18px;
     }
     .landing-navbar {
-        padding: 20px;
+        padding: 15px;
+    }
+    .btn-glass {
+        padding: 8px 16px; /* Botones más chicos */
+        font-size: 14px;
     }
 }

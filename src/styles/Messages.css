@@ -190,3 +190,37 @@
     color: var(--text-secondary);
     gap: 15px;
   }
+
+  /* El botón de volver está oculto en PC */
+  .mobile-back-btn {
+    display: none !important;
+  }
+
+/* ==========================================================================
+   AJUSTES RESPONSIVE (MÓVILES)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .messages-container {
+    height: 80vh; 
+    border-radius: 12px;
+  }
+
+  .contacts-sidebar {
+    width: 100%;
+    border-right: none;
+  }
+
+  .chat-area {
+    width: 100%;
+  }
+
+  /* Ocultar elementos según la vista en móvil */
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  /* Mostrar botón de volver solo en móvil */
+  .mobile-back-btn {
+    display: flex !important;
+  }
+}

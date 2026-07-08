@@ -3,7 +3,7 @@ import { useAuth } from "../../context/AuthContext";
 import { db } from "../../firebase";
 import { collection, query, onSnapshot, doc } from "firebase/firestore";
 import { useMessages } from "../../hooks/useMessages";
-import { Send, MessageSquare, Trash2, Edit2, Check, CheckCheck, X, AlertTriangle } from "lucide-react";
+import { Send, MessageSquare, Trash2, Edit2, Check, CheckCheck, X, AlertTriangle, ArrowLeft } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../../styles/Messages.css";
 
@@ -168,7 +168,7 @@ function Messages() {
 
   return (
     <div className="messages-container fade-in">
-      <div className="contacts-sidebar">
+      <div className={`contacts-sidebar ${selectedContact ? 'hide-on-mobile' : ''}`}>
         <div className="contacts-header" style={{ display: "flex", flexDirection: "column", gap: "10px", paddingBottom: "15px", height: "auto" }}>
             <span style={{ fontWeight: "800", fontSize: "18px" }}>Mensajes Directos</span>
             <div style={{ position: "relative" }}>
@@ -242,7 +242,15 @@ function Messages() {
 
       {selectedContact ? (
         <div className="chat-area">
-          <div className="chat-header" style={{ display: "flex", justifyContent: "space-between" }}>
+          <div className="chat-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <button 
+                  className="mobile-back-btn" 
+                  onClick={() => setSelectedContact(null)} 
+                  style={{ background: "none", border: "none", color: "var(--text-primary)", cursor: "pointer", padding: "0", display: "flex", alignItems: "center" }}
+                >
+                    <ArrowLeft size={24} />
+                </button>
             {selectedContact.isDeleted ? (
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-secondary)", cursor: "not-allowed" }}>
                     <div className="contact-avatar" style={{ width: "35px", height: "35px", fontSize: "14px", background: "var(--bg-surface)" }}>
@@ -264,6 +272,7 @@ function Messages() {
                     </strong>
                 </Link>
             )}
+            </div>
             
             {/* BOTÓN VACIAR CHAT */}
             <button onClick={handleClearChat} style={{ display: "flex", alignItems: "center", gap: "5px", background: "transparent", border: "1px solid var(--danger-color)", color: "var(--danger-color)", padding: "5px 10px", borderRadius: "5px", cursor: "pointer", fontSize: "12px" }}>
@@ -364,7 +373,7 @@ function Messages() {
           </div>
         </div>
       ) : (
-        <div className="no-chat-selected">
+        <div className="no-chat-selected hide-on-mobile">
           <MessageSquare size={60} strokeWidth={1} />
           <h2>Tus Mensajes</h2>
           <p>Selecciona un contacto a la izquierda para enviar o modificar mensajes privados.</p>
