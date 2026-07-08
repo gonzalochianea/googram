@@ -28,9 +28,9 @@ function MainLayout({ children }) {
       
       {/* Barra superior solo para móviles */}
       <div className="mobile-top-bar hide-on-desktop">
-        <div className="mobile-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '20px', fontWeight: '800', fontFamily: "'Poppins', 'Outfit', sans-serif" }}>
+        <div className="mobile-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '24px', fontWeight: '800', fontFamily: "'Poppins', 'Outfit', sans-serif" }}>
           <span style={{ background: 'linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #f093fb 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.5px' }}>Googram</span>
-          <img src="/Googram%20logo.png" alt="Globe" style={{ height: '1.2em', width: 'auto' }} />
+          <img src="/Googram%20logo.png" alt="Globe" style={{ height: '1.3em', width: 'auto' }} />
         </div>
       </div>
 

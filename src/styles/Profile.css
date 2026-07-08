@@ -108,3 +108,32 @@
     padding: 50px;
     font-size: 18px;
   }
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .profile-info {
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .profile-stats {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .story-avatar-container {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .profile-grid {
+        gap: 5px;
+    }
+}
