@@ -26,7 +26,15 @@ function MainLayout({ children }) {
   return (
     <div className="main-layout fade-in">
       
-      {/* El menú lateral siempre está fijo a la izquierda */}
+      {/* Barra superior solo para móviles */}
+      <div className="mobile-top-bar hide-on-desktop">
+        <div className="mobile-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '20px', fontWeight: '800', fontFamily: "'Poppins', 'Outfit', sans-serif" }}>
+          <span style={{ background: 'linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #f093fb 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.5px' }}>Googram</span>
+          <img src="/Googram%20logo.png" alt="Globe" style={{ height: '1.2em', width: 'auto' }} />
+        </div>
+      </div>
+
+      {/* El menú lateral siempre está fijo a la izquierda (o abajo en móvil) */}
       <Sidebar onOpenUploadModal={handleOpenPostUpload} />
       
       {/* Esta es la zona dinámica. Acá adentro React va a inyectar el Feed o el Perfil según la URL */}

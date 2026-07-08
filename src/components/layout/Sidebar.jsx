@@ -174,7 +174,7 @@ function Sidebar({ onOpenUploadModal }) {
           <span className="nav-text">Mi Perfil</span>
         </Link>
         
-        <Link to="/settings" className="nav-item" style={{ marginTop: "20px" }}>
+        <Link to="/settings" className="nav-item settings-btn" style={{ marginTop: "20px" }}>
           <SettingsIcon size={24} strokeWidth={1.5} />
           <span className="nav-text">Configuración</span>
         </Link>

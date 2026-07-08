@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { db } from "../../firebase";
+import { db, auth } from "../../firebase";
+import { signOut } from "firebase/auth";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { useAuth } from "../../context/AuthContext";
-import { Grid, Bookmark, X, Plus } from "lucide-react";
+import { Grid, Bookmark, X, Plus, Menu, Settings as SettingsIcon, LogOut } from "lucide-react";
 import EditProfileModal from "../layout/EditProfileModal";
 import UserListModal from "../layout/UserListModal";
 import Post from "../layout/Post";
@@ -26,6 +27,16 @@ function Profile() {
   const isMyProfile = user?.email === targetEmail;
 
   const [activeTab, setActiveTab] = useState("posts");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/login");
+    } catch (error) {
+      console.error("Error al salir:", error);
+    }
+  };
 
   // Modales
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -98,7 +109,29 @@ function Profile() {
     <div className="profile-container fade-in">
       
       {/* --- CABECERA --- */}
-      <div className="profile-header">
+      <div className="profile-header" style={{ position: "relative" }}>
+        
+        {/* MENÚ HAMBURGUESA MÓVIL */}
+        {isMyProfile && (
+          <div className="mobile-hamburger-menu hide-on-desktop" style={{ position: "absolute", top: "10px", right: "10px", zIndex: 100 }}>
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              style={{ background: "transparent", border: "none", color: "var(--text-primary)", cursor: "pointer", padding: "5px" }}
+            >
+              <Menu size={28} />
+            </button>
+            {isMenuOpen && (
+              <div className="fade-in" style={{ position: "absolute", top: "40px", right: "0", background: "var(--bg-surface)", border: "1px solid var(--border-color)", borderRadius: "12px", boxShadow: "var(--shadow-md)", display: "flex", flexDirection: "column", minWidth: "180px", overflow: "hidden" }}>
+                <button onClick={() => navigate("/settings")} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "15px", background: "transparent", border: "none", borderBottom: "1px solid var(--border-color)", color: "var(--text-primary)", cursor: "pointer", fontSize: "14px", fontWeight: "bold" }}>
+                  <SettingsIcon size={18} /> Configuración
+                </button>
+                <button onClick={handleLogout} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "15px", background: "transparent", border: "none", color: "var(--danger-color)", cursor: "pointer", fontSize: "14px", fontWeight: "bold" }}>
+                  <LogOut size={18} /> Cerrar Sesión
+                </button>
+              </div>
+            )}
+          </div>
+        )}
         
         <div 
           className={`story-avatar-container ${(profileActiveStory && (isMyProfile || !profileUser?.isPrivate || isFollowing)) ? 'active' : 'empty'}`}
